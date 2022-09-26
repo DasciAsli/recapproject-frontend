@@ -1,0 +1,14 @@
+
+.list-group-item
+{
+    background-color:gainsboro;
+    font-weight: bolder;
+}
+.listitem
+{
+    background-color:gainsboro;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border-color:black;
+}
