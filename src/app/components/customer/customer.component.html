@@ -1,15 +1,15 @@
 <table class="table ">
     <thead>
       <tr class="table-dark">
-        <th scope="col">Customer</th>
-        <th scope="col">User</th>
+        <th scope="col">CustomerId</th>
+        <th scope="col">CustomerName</th>
         <th scope="col">CompanyName</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let customer of customers">
         <td>{{customer.customerId}}</td>
-        <td>{{customer.userId}}</td>
+        <td>{{customer.customerName}}</td>
         <td>{{customer.companyName}}</td>
       </tr>
     </tbody>

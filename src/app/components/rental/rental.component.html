@@ -1,9 +1,9 @@
 <table class="table ">
     <thead>
       <tr class="table-dark">
-        <th scope="col">Rental</th>
-        <th scope="col">Car</th>
-        <th scope="col">Customer</th>
+        <th scope="col">RentalId</th>
+        <th scope="col">BrandName</th>
+        <th scope="col">CustomerName</th>
         <th scope="col">RentDate</th>
         <th scope="col">ReturnDate</th>
       </tr>
@@ -11,10 +11,10 @@
     <tbody>
       <tr *ngFor="let rental of rental">
         <td>{{rental.rentalId}}</td>
-        <td>{{rental.carId}}</td>
-        <td>{{rental.customerId}}</td>
-        <td>{{rental.rentDate}}</td>
-        <td>{{rental.returnDate}}</td>
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.customerName}}</td>
+        <td>{{rental.rentDate | date:"dd/MM/y"}}</td>
+        <td>{{rental.returnDate | date:"dd/MM/y"}}</td>
       </tr>
 
     </tbody>
