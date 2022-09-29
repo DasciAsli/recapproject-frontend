@@ -1,56 +1,27 @@
-<div class="container">
-    <div class="row mt-3 p-4">
-       <div class="col-2">
-          <div id="list-example" class="list-group sticky-top">
-            <a class="list-group-item list-group-item-action" href="#list-item-1">Cars</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-2">Brands</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">Colors</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">Customers</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-5">Rentals</a>
-           </div>
-       </div>
-       <div class="col-10">
-          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-            
-            <div class="listitem">
-               <h4 id="list-item-1">Cars</h4>
-               <div>
-                  <app-car></app-car>            
-               </div>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <div class="container">
+    <a class="navbar-brand" href="#">RentACar</a> 
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+  </div>  
+</nav>
 
-            <div class="listitem">
-               <h4 id="list-item-2">Brands</h4>
-               <div>
-                  <app-brand></app-brand>
-                </div>
-            </div>
+<div class="nav2">
+  <div class="container">
+   <ul class="main-nav">
+    <li class="tab-link pt-2" *ngFor="let item of items">
+      <a [class]="getCurrentItem(item)" routerLink="/{{item.toLowerCase()}}"  
+         (click)="setCurrentItem(item)"  href="#">{{item}}</a>
+    </li>
+   </ul>
+  </div>
+  <hr>
+</div>
 
-            <div class="listitem">
-               <h4 id="list-item-3">Colors</h4>
-               <div>
-                  <app-color></app-color>
-                </div>
-            </div>
-
-            <div class="listitem">
-               <h4 id="list-item-4">Customers</h4>
-               <div>
-                  <app-customer></app-customer>
-                </div>
-            </div>
-
-            <div class="listitem">
-               <h4 id="list-item-5">Rentals</h4>
-               <div>
-                  <app-rental></app-rental>
-                </div>
-            </div>
-
-
-          </div>
-       </div>
+<div class="container"> 
+    <div class="mt-4" >
+       <router-outlet></router-outlet> 
     </div>
-
-
 </div>

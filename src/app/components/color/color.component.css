@@ -1,4 +1,6 @@
-.table
+.active
 {
-    background-color:ghostwhite;
+    background-color: #DC3545;
+    color:white;
+    border-color: #DC3545;
 }

@@ -1,14 +1,23 @@
-
-.list-group-item
+.active
 {
-    background-color:gainsboro;
     font-weight: bolder;
+    text-decoration: underline;
 }
-.listitem
-{
-    background-color:gainsboro;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    border-color:black;
+.main-nav
+{   
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+}
+.tab-link
+{    
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+.nav2
+{  
+    background-color:#FFFFFF;
+    color:#DC3545;
 }
