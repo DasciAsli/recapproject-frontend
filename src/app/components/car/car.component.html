@@ -40,6 +40,7 @@
           <th scope="col">ModelYear</th>
           <th scope="col">DailyPrice</th>
           <th scope="col">Description</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -50,6 +51,9 @@
           <td>{{car.modelYear | date:"yyyy"}}</td>
           <td>{{car.dailyPrice}}</td>
           <td>{{car.description}}</td>
+          <td>
+            <button type="button" class="btn btn-danger" routerLink="/cars/cardetail/{{car.carId}}">Detay</button>
+          </td>
         </tr>
       </tbody>
     </table>
