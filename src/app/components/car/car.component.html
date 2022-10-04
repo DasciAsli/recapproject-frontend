@@ -9,9 +9,7 @@
         </a>
          </p>     
          <div class="collapse collapse-horizontal mb-4 mt-1" id="collapseWidthExample">
-            <ul class="list-group">              
-              <app-brand></app-brand>                
-           </ul>
+           <app-brand></app-brand>           
          </div>
       </div>
 
@@ -21,10 +19,8 @@
          Color
        </a>
         </p>     
-        <div class="collapse collapse-horizontal mb-4 mt-1" id="collapseWidthExample1">
-           <ul class="list-group">              
+        <div class="collapse collapse-horizontal mb-4 mt-1" id="collapseWidthExample1">                       
             <app-color></app-color>               
-          </ul>
         </div>
       </div>
 
@@ -49,10 +45,10 @@
           <td>{{car.brandName}}</td>
           <td>{{car.colorName}}</td>
           <td>{{car.modelYear | date:"yyyy"}}</td>
-          <td>{{car.dailyPrice}}</td>
-          <td>{{car.description}}</td>
+          <td>{{car.dailyPrice | currency}}</td>
+          <td>{{car.description | uppercase}}</td>
           <td>
-            <button type="button" class="btn btn-danger" routerLink="/cars/cardetail/{{car.carId}}">Detay</button>
+            <button type="button" class="btn btn-danger" routerLink="/cars/cardetail/{{car.carId}}">Detail</button>
           </td>
         </tr>
       </tbody>

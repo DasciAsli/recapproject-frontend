@@ -1,6 +1,19 @@
- <li
-  (click)="setCurrentBrand(brand)"
-  routerLink="/cars/brand/{{brand.brandId}}"
-  *ngFor="let brand of brands" 
-  [class]="getCurrentBrand(brand)"
-  >{{brand.brandName}}</li>
+<input 
+ class="form-control form-control-sm mb-2"
+ type="text"
+ placeholder="Search brand"
+ [(ngModel)]="filterText"
+ >
+ 
+<div class="overflow" >
+  <ul class="list-group" >              
+      <li
+        (click)="setCurrentBrand(brand)"
+        routerLink="/cars/brand/{{brand.brandId}}"
+        *ngFor="let brand of brands | filterPipeForBrand:filterText" 
+        [class]="getCurrentBrand(brand)"
+      >
+      {{brand.brandName}}
+      </li>      
+  </ul>
+</div>

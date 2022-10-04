@@ -1,6 +1,20 @@
- <li 
- (click)="setCurrentColor(color)"
- routerLink="/cars/color/{{color.colorId}}"
- *ngFor="let color of colors" 
- [class]="getCurrentColor(color)"
- >{{color.colorName}}</li>
+<input
+ class="form-control form-control-sm mb-2" 
+ type="text" 
+ placeholder="Search color" 
+ aria-label=".form-control-sm example"
+ [(ngModel)]="filterText">
+
+
+<div class="overflow" >
+    <ul class="list-group">
+      <li 
+        (click)="setCurrentColor(color)"
+        routerLink="/cars/color/{{color.colorId}}"
+        *ngFor="let color of colors | filterPipeForColor:filterText" 
+        [class]="getCurrentColor(color)"
+      >
+      {{color.colorName}}
+    </li>
+</ul>
+</div> 
