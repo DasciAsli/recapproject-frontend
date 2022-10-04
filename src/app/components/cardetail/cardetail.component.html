@@ -1,6 +1,9 @@
+<h4 class="fst-italic fw-lighter text-danger mb-4">CarDetails</h4>
+
 <div class="container">
     <div class="row">
-        <div class="col-5">
+
+        <div class="col-md-5 col-sm-12">
             <div class="card">
                 <h5 class="card-header">Properties</h5>
                 <div class="card-body" >
@@ -30,10 +33,11 @@
                     </table>
                   
                 </div>
-                <a href="#" class="btn btn-danger">Rent</a>
+                <a href="#" class="btn btn-danger" routerLink="/cars/rental/{{car.carId}}">Rent</a>
               </div>
         </div>
-        <div class="col-7">
+
+        <div class="col-md-7 col-sm-12">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">                
                   <div class="carousel-item active" *ngFor="let img of carImages">                
@@ -50,5 +54,6 @@
                 </button>
               </div>
         </div>
+
     </div>
 </div>
