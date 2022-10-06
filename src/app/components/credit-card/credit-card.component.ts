@@ -9,7 +9,10 @@ import { CreditCardInformationService } from 'src/app/services/credit-card-infor
   styleUrls: ['./credit-card.component.css']
 })
 export class CreditCardComponent implements OnInit {
+  //Login işlemi yapıldıktan sonra kiralama kaydı ve siparişler kısmı eklenecek.
+
   crediCardInformationForm:FormGroup
+  
   constructor(
     private crediCardInformationService:CreditCardInformationService,
     private formBuilder:FormBuilder,
@@ -34,16 +37,16 @@ export class CreditCardComponent implements OnInit {
     {
       let crediCardInformationModel = Object.assign({},this.crediCardInformationForm.value);
       console.log(crediCardInformationModel);
-      this.crediCardInformationService.creditCardInformationAdd(crediCardInformationModel).subscribe(
-        response=>{
-          
-          this.toastrService.info("Success");
-
+      this.crediCardInformationService.creditCardInformationAdd(crediCardInformationModel).subscribe
+      (
+        response=>
+        {  
+          this.toastrService.info("Successful");
         }
-      )
-      
+      )   
     }
-    else{
+    else
+    {
       this.toastrService.error("Please again enter the informations of your credit card");
     }
   }

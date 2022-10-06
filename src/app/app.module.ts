@@ -13,7 +13,6 @@ import { RentalComponent } from './components/rental/rental.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { FilterPipeForBrandPipe } from './pipes/filter-pipe-for-brand.pipe';
 import { FilterPipeForColorPipe } from './pipes/filter-pipe-for-color.pipe';
-import { RentCarComponent } from './components/rent-car/rent-car.component';
 import { DateComponent } from './components/date/date.component';
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
 
@@ -32,7 +31,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
     CardetailComponent,
     FilterPipeForBrandPipe,
     FilterPipeForColorPipe,
-    RentCarComponent,
     DateComponent,
     CreditCardComponent
   ],

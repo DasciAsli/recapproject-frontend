@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';//urlde belirttiğimiz carId değerini alabilmek için kullanıldı
+import { ActivatedRoute, Router } from '@angular/router';//urlde belirttiğimiz carId değerini alabilmek için kullanıldı
 import { Rental } from 'src/app/models/rental';
 import { RentalService } from 'src/app/services/rental.service';
 import {FormGroup,FormControl, FormBuilder, Validators} from "@angular/forms"; //Formdaki verileri alabilmek için kullanıldı
@@ -17,12 +17,14 @@ import {DatePipe} from '@angular/common'; //Tarih formatını değiştirmek içi
 export class DateComponent implements OnInit {
 rentals:Rental[];
 dateForm :FormGroup;
+isControl:boolean=false;
 
   constructor(
     private rentalService:RentalService,
     private activatedRoute:ActivatedRoute,
     private formBuilder : FormBuilder,
-    private toastrService:ToastrService
+    private toastrService:ToastrService,
+    private router:Router
     ) { }
 
   ngOnInit(): void {
@@ -56,44 +58,61 @@ dateForm :FormGroup;
   controlDate(){
     if(this.dateForm.valid)
     {
-      let dateModel = Object.assign({},this.dateForm.value)
-      for(const x of this.rentals)
-      {
-        let rentDate:any=new DatePipe('en-US').transform(x.rentDate,'yyyy-MM-dd');
-        let returnDate:any= new DatePipe('en-US').transform(x.returnDate,'yyyy-MM-dd');
-          if
-            (
-              dateModel.rentDate === rentDate ||
-              dateModel.rentDate === returnDate||
-  
-              dateModel.returnDate === rentDate ||
-              dateModel.returnDate ===returnDate ||
-  
-              (dateModel.rentDate>rentDate && dateModel.rentDate<returnDate) ||
-              (dateModel.returnDate>rentDate && dateModel.returnDate<returnDate)||
-  
-              (dateModel.rentDate>returnDate && dateModel.rentDate<rentDate)||
-              (dateModel.returnDate>returnDate && dateModel.returnDate<rentDate)||
-                 
-              (dateModel.rentDate<rentDate && dateModel.returnDate>rentDate) ||
-               (dateModel.rentDate<returnDate && dateModel.returnDate>returnDate)||
-  
-               (dateModel.rentDate>rentDate && dateModel.returnDate<rentDate) ||
-               (dateModel.rentDate>returnDate && dateModel.returnDate<returnDate)
-            )
-               {
-                this.toastrService.error("The car is not available");
-                break;             
-               }               
-      } 
+      let dateModel = Object.assign({},this.dateForm.value);
+      this.compareDates(this.rentals,dateModel);    
     }
-     else
+    else
     {
       this.toastrService.error("The date is wrong");
     }
 
+    this.successRoute();
+    
   }
 
+  successRoute(){
+    if(this.isControl==true)
+    {
+      this.toastrService.success("Ödeme sayfasına yönlendiriliyorsunuz");
+      this.router.navigate(["cars/card/:carId"])
+    }
+  }
 
+  compareDates(array:any[],model:any){
+    for(let x=0;x<array.length;x++)
+    {       
+      let rentDate:any=new DatePipe('en-US').transform(this.rentals[x].rentDate,'yyyy-MM-dd');
+      let returnDate:any= new DatePipe('en-US').transform(this.rentals[x].returnDate,'yyyy-MM-dd');
+        if
+          (
+            model.rentDate === rentDate ||
+            model.rentDate === returnDate||
+
+            model.returnDate === rentDate ||
+            model.returnDate ===returnDate ||
+
+            (model.rentDate>rentDate && model.rentDate<returnDate) ||
+            (model.returnDate>rentDate && model.returnDate<returnDate)||
+
+            (model.rentDate>returnDate && model.rentDate<rentDate)||
+            (model.returnDate>returnDate && model.returnDate<rentDate)||
+               
+            (model.rentDate<rentDate && model.returnDate>rentDate) ||
+             (model.rentDate<returnDate && model.returnDate>returnDate)||
+
+             (model.rentDate>rentDate && model.returnDate<rentDate) ||
+             (model.rentDate>returnDate && model.returnDate<returnDate)
+          )
+             {
+              this.toastrService.error("The car is not available");
+              this.isControl=false;
+              break;             
+             }
+          else
+          {
+            this.isControl=true;
+          }               
+    } 
+  }
 
 }

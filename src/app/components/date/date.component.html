@@ -1,27 +1,37 @@
+<h4 class="fst-italic fw-lighter text-danger ">Date Control Page</h4>
 
-  <div class="card py-4">
-    <div class="card-body" >
-      <form [formGroup] = "dateForm" (ngSubmit)="controlDate()">
-        <div class="row px-5">        
-          <div class="col-md-6">
-            <label for="rentDate" required class="form-label">Rental Date : </label>
-            <input  type="date" formControlName="rentDate" class="form-control" >
+<div class="container mt-5">
+  
+    <div class="row mb-5">
+        <div class="col-md-8 col-sm-12 mx-auto ">
+
+          <div class="card py-4">
+            <div class="card-body" >
+              <form [formGroup] = "dateForm" (ngSubmit)="controlDate()">
+                <div class="row px-5">        
+                  <div class="col-md-6">
+                    <label for="rentDate" required class="form-label">Rental Date : </label>
+                    <input  type="date" formControlName="rentDate" class="form-control" >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="returnDate"  required class="form-label">Return Date : </label>
+                    <input type="date" formControlName="returnDate" class="form-control">
+                  </div>        
+                </div>
+                <div>
+                  <label for="carId"  class="form-label"></label>
+                  <input type="hidden" formControlName="carId" class="form-control">
+                </div>
+                <div class="row px-5" >
+                  <div class="col-md-3">
+                    <button type="submit" class="btn btn-outline-danger mt-4" >Control</button>           
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label for="returnDate"  required class="form-label">Return Date : </label>
-            <input type="date" formControlName="returnDate" class="form-control">
-          </div>        
+
         </div>
-        <div>
-          <label for="carId"  class="form-label"></label>
-          <input type="hidden" formControlName="carId" class="form-control">
-        </div>
-        <div class="row px-5" >
-          <div class="col-md-3">
-            <button type="submit" class="btn btn-outline-danger mt-4" >Control</button>           
-          </div>
-        </div>
-      </form>
     </div>
-  </div>
 
+</div>
