@@ -1,24 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <div class="container">
-    <a class="navbar-brand" href="#">RentACar</a> 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
-  </div>  
-</nav>
-
-<div class="nav2">
-  <div class="container">
-   <ul class="main-nav">
-    <li class="tab-link pt-2" *ngFor="let item of items">
-      <a [class]="getCurrentItem(item)" routerLink="/{{item.toLowerCase()}}"  
-         (click)="setCurrentItem(item)"  href="#">{{item}}</a>
-    </li>
-   </ul>
-  </div>
-  <hr>
-</div>
+<app-nav></app-nav>
 
 <div class="container"> 
     <div class="mt-4" >

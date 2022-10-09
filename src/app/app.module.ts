@@ -17,7 +17,14 @@ import { DateComponent } from './components/date/date.component';
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
 
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { NavComponent } from './components/nav/nav.component';
+import { CarAddComponent } from './components/car-add/car-add.component'
 
 
 @NgModule({
@@ -32,7 +39,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
     FilterPipeForBrandPipe,
     FilterPipeForColorPipe,
     DateComponent,
-    CreditCardComponent
+    CreditCardComponent,
+    BrandListComponent,
+    ColorListComponent,
+    ColorAddComponent,
+    BrandAddComponent,
+    CarListComponent,
+    NavComponent,
+    CarAddComponent
   ],
   imports: [
     BrowserModule,

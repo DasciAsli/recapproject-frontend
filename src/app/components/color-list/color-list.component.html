@@ -1,0 +1,24 @@
+<h4 class="fst-italic fw-lighter text-danger mb-4">Colors</h4>
+
+<button class="btn btn-lg btn-outline-danger mb-2" routerLink="/colors/add">Add a new color</button>
+<div class="shadow-lg p-3 mb-5 bg-body rounded table-responsive">
+  <table class="table ">
+    <thead>
+      <tr class="row">
+        <th scope="col" class="col-4">ColorId</th>
+        <th scope="col" class="col-4">ColorName</th>
+        <th scope="col" class="col-4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let color of colors" class="row">
+        <td class="col-4">{{color.colorId}}</td>
+        <td class="col-4">{{color.colorName}}</td>
+        <td class="col-4">
+          <button class="btn btn-danger mx-2">Delete</button>
+          <button class="btn btn-danger mx-2">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,32 @@
+<h4 class="fst-italic fw-lighter text-danger mb-4">Cars</h4>
+
+<button class="btn btn-lg btn-outline-danger mb-2" routerLink="/cars/add">Add a new car</button>
+<div class="shadow-lg p-3 mb-5 bg-body rounded table-responsive">
+    <table class="table">
+        <thead>
+          <tr >
+            <th scope="col">CarId</th>
+            <th scope="col">BrandName</th>
+            <th scope="col">ColorName</th>
+            <th scope="col">ModelYear</th>
+            <th scope="col">DailyPrice</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{car.carId}}</td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.modelYear | date:"yyyy"}}</td>
+            <td>{{car.dailyPrice | currency}}</td>
+            <td>{{car.description | uppercase}}</td>
+            <td>
+              <button type="button" class="btn btn-danger mx-2">Delete</button>
+              <button type="button" class="btn btn-danger mx-2">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
