@@ -1,36 +1,40 @@
 <div class="content ">
     <div class="row ">
       <div class="col-8 mx-auto shadow-lg p-3 mb-5 bg-body rounded mt-4">
-        <form>
+        <form [formGroup]="carAddForm">
+
           <div class="mb-3">
-            <label for="brandName" class="form-label">BrandName</label>
-            <input type="text" class="form-control" id="brandName" >
+            <label for="brandId" class="form-label">BrandName</label>
+            <select id="brandId" class="form-select" formControlName="brandId">
+              <option >Select a brand</option>
+              <option *ngFor="let brand of brands" [ngValue]="brand.brandId">{{brand.brandName}}</option>
+            </select>
           </div>
+
           <div class="mb-3">
-            <label for="colorName" class="form-label">ColorName</label>
-            <input type="text" class="form-control" id="colorName" >
+            <label for="colorId" class="form-label">ColorName</label>
+            <select id="colorId" class="form-select" formControlName="colorId">
+              <option >Select a color</option>
+              <option *ngFor="let color of colors" [ngValue]="color.colorId">{{color.colorName}}</option>
+            </select>
           </div>
+
           <div class="mb-3">
             <label for="modelYear" class="form-label">ModelYear</label>
-            <input type="text" class="form-control" id="modelYear" >
+            <input type="date" class="form-control" id="modelYear" formControlName="modelYear" >
           </div>
-          <div class="mb-3">
-            <label for="modelYear" class="form-label">ModelYear</label>
-            <input type="text" class="form-control" id="modelYear" >
-          </div>
+
           <div class="mb-3">
             <label for="dailyPrice" class="form-label">DailyPrice</label>
-            <input type="text" class="form-control" id="dailyPrice" >
+            <input type="number" class="form-control" id="dailyPrice" formControlName="dailyPrice" >
           </div>
-          <div class="mb-3">
-            <label for="dailyPrice" class="form-label">DailyPrice</label>
-            <input type="text" class="form-control" id="dailyPrice" >
-          </div>
+
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" >
+            <input type="text" class="form-control" id="description" formControlName="description" >
           </div>
-          <button type="submit" class="btn btn-danger" routerLink="/carlist">Add</button>
+
+          <button type="submit" class="btn btn-danger" (click)="addCar()">Add</button>
         </form>
       </div>
     </div>
