@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { CarComponent } from './components/car/car.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:"rentals",component:RentalComponent},
   {path:"brands",component:BrandListComponent},
   {path:"brands/add",component:BrandAddComponent},
+  {path:"brands/update/:brandId",component:BrandUpdateComponent},
   {path:"colors",component:ColorListComponent},
   {path:"colors/add",component:ColorAddComponent},
   {path:"colors/update/:colorId",component:ColorUpdateComponent},
