@@ -8,6 +8,7 @@ import { CarComponent } from './components/car/car.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { DateComponent } from './components/date/date.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"brands/add",component:BrandAddComponent},
   {path:"colors",component:ColorListComponent},
   {path:"colors/add",component:ColorAddComponent},
+  {path:"colors/update/:colorId",component:ColorUpdateComponent},
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent},
   {path:"cars/cardetail/:carId",component:CardetailComponent},

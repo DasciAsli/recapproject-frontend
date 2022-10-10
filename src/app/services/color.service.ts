@@ -22,4 +22,15 @@ export class ColorService {
     let newPath=this.apiUrl + "/add";
     return this.httpClient.post<ResponseModel>(newPath,color);
   }
+
+  getColorByColorId(colorId:number):Observable<SingleResponseModel<Color>>{
+    let newPath = this.apiUrl + "/getbyid?id=" + colorId;
+    return this.httpClient.get<SingleResponseModel<Color>>(newPath);
+  }
+
+  updateColor(color:Color):Observable<ResponseModel>{
+    let newPath=this.apiUrl + "/update";
+    return this.httpClient.post<ResponseModel>(newPath,color);
+  }
+  
 }

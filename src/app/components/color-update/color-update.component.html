@@ -1,0 +1,17 @@
+<div class="content ">
+    <div class="row ">
+      <div class="col-8 mx-auto shadow-lg p-3 mb-5 bg-body rounded mt-4">
+        <form *ngIf="color" [formGroup]="colorUpdateForm">
+          <div>
+            <label for="colorId" class="form-label"></label>
+            <input type="hidden" class="form-control" id="colorId" formControlName="colorId" readonly placeholder="{{color.colorId}}">
+          </div>
+          <div class="mb-3" >
+            <label for="colorName" class="form-label">ColorName</label>
+            <input type="text" class="form-control" id="colorName" formControlName="colorName" placeholder="{{color.colorName}}">
+          </div>
+          <button type="submit" class="btn btn-danger" (click)="colorUpdate()">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>

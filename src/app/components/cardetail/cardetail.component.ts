@@ -28,6 +28,7 @@ export class CardetailComponent implements OnInit {
       this.getImagesByCarId(params["carId"]);
     })  
   }
+  
 
   getCarByCarId(carId:number){
     this.carService.getCarByCarId(carId).subscribe
