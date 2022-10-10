@@ -65,6 +65,13 @@ export class CarAddComponent implements OnInit {
         {
           this.toastrService.info(response.message,"Araba eklendi");
           this.router.navigate(["/carlist"]);
+        },responseError=>{
+          if(responseError.error.Errors.length>0)
+          {
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası");     
+            }           
+          }
         })
     }
     else

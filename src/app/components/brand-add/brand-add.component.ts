@@ -40,6 +40,13 @@ export class BrandAddComponent implements OnInit {
         {
           this.toastrService.info(response.message,"Marka eklendi");
           this.router.navigate(["/brands"]);
+        },responseError=>{
+          if(responseError.error.Errors.length>0)
+          {
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası");     
+            }           
+          }
         })
     }
     else

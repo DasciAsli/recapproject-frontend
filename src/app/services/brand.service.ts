@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Brand } from '../models/brand';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
@@ -18,8 +19,8 @@ export class BrandService {
     return this.httpClient.get<ListResponseModel<Brand>>(newPath);
   }
 
-  addBrand(brand:Brand):Observable<SingleResponseModel<Brand>>{
+  addBrand(brand:Brand):Observable<ResponseModel>{
     let newPath=this.apiUrl +"/add";
-    return this.httpClient.post<SingleResponseModel<Brand>>(newPath,brand);
+    return this.httpClient.post<ResponseModel>(newPath,brand);
   }
 }

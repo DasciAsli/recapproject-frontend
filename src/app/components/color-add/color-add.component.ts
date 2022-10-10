@@ -41,6 +41,13 @@ export class ColorAddComponent implements OnInit {
         {
           this.toastService.success(response.message,"Renk eklendi");
           this.router.navigate(["/colors"]);   
+        },responseError=>{
+          if(responseError.error.Errors.length>0)
+          {
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası");     
+            }           
+          }
         })     
     }
     else

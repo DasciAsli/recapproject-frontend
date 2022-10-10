@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Car } from '../models/car';
 import { CarModel } from '../models/carModel';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
@@ -35,8 +36,8 @@ export class CarService {
     return this.httpClient.get<SingleResponseModel<Car>>(newPath);  
   }
 
-  addCar(carModel:CarModel):Observable<SingleResponseModel<CarModel>>{
+  addCar(carModel:CarModel):Observable<ResponseModel>{
     let newPath=this.apiUrl+"cars/add";
-    return this.httpClient.post<SingleResponseModel<CarModel>>(newPath,carModel);
+    return this.httpClient.post<ResponseModel>(newPath,carModel);
   }
 }
