@@ -7,6 +7,7 @@ import { RentalService } from 'src/app/services/rental.service';
   templateUrl: './rental.component.html',
   styleUrls: ['./rental.component.css']
 })
+
 export class RentalComponent implements OnInit {
   rental:Rental[]=[];
 
@@ -15,6 +16,7 @@ export class RentalComponent implements OnInit {
   ngOnInit(): void {
     this.getRentals();
   }
+
   getRentals()
   {
     this.rentalService.getRentals().subscribe(

@@ -1,19 +1,18 @@
 <div class="content ">
   <div class="row ">
     <div class="col-8 mx-auto shadow-lg p-3 mb-5 bg-body rounded mt-4">
+
       <form [formGroup]="colorAddForm">
+
         <div class="mb-3">
           <label for="colorName" class="form-label">ColorName</label>
           <input type="text" class="form-control" id="colorName" formControlName="colorName" placeholder="ColorName">
         </div>
+
         <button type="submit" class="btn btn-danger" (click)="colorAdd()">Add</button>
+        
       </form>
+
     </div>
   </div>
 </div>
-
-<!--
-  1)[FormGroup] önemli
-  2)formControlName önemli
-  3)(click)
--->

@@ -5,6 +5,7 @@ import { BrandListComponent } from './components/brand-list/brand-list.component
 import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarListComponent } from './components/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { CarComponent } from './components/car/car.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:"cars",component:CarComponent},
   {path:"carlist",component:CarListComponent},
   {path:"cars/add",component:CarAddComponent},
+  {path:"cars/update/:carId",component:CarUpdateComponent},
   {path:"customers",component:CustomerComponent},
   {path:"rentals",component:RentalComponent},
   {path:"brands",component:BrandListComponent},

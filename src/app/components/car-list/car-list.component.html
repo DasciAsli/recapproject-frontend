@@ -1,7 +1,9 @@
 <h4 class="fst-italic fw-lighter text-danger mb-4">Cars</h4>
 
 <button class="btn btn-lg btn-outline-danger mb-2" routerLink="/cars/add">Add a new car</button>
+
 <div class="shadow-lg p-3 mb-5 bg-body rounded table-responsive">
+
     <table class="table">
         <thead>
           <tr >
@@ -24,9 +26,10 @@
             <td>{{car.description | uppercase}}</td>
             <td>
               <button type="button" class="btn btn-danger mx-2">Delete</button>
-              <button type="button" class="btn btn-danger mx-2">Update</button>
+              <button type="button" class="btn btn-danger mx-2" routerLink="/cars/update/{{car.carId}}">Update</button>
             </td>
           </tr>
         </tbody>
-      </table>
+    </table>
+    
 </div>

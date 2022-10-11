@@ -1,37 +1,41 @@
 <h4 class="fst-italic fw-lighter text-danger ">Payment Page</h4>
 
   <div class="container mt-5">
-  
       <div class="row mb-5">
           <div class="col-md-8 col-sm-12 mx-auto ">
-
             <div class="card py-4">
               <div class="card-body">
                 <div class="row px-5">
+
                   <form [formGroup] = "crediCardInformationForm" (ngSubmit)="creditCardInformationAdd()">
+
                     <div class="mb-3 ">
                       <label for="firstName" class="form-label">FirstName</label>
                       <input  type="text" formControlName="firstName" class="form-control">
                     </div>
+
                     <div class="mb-3 ">
                       <label for="lastName" class="form-label">LastName</label>
                       <input  type="text" formControlName="lastName" class="form-control">
                     </div>
+
                     <div class="mb-3 ">
                         <label for="cardNumber" class="form-label">Card Number</label>
                         <input type="text" formControlName="cardNumber"  class="form-control">
                     </div>
+
                     <div class="mb-3 ">
                         <label for="cvv" class="form-label">Cvv : </label>
                         <input  type="text" formControlName="cvv"  class="form-control" >
                     </div>
+
                     <button class="btn btn-outline-danger mt-4" type="submit">Complete the payment</button>
+
                   </form> 
+
                  </div>
               </div>
             </div>
-
           </div>
       </div>
-  
   </div>

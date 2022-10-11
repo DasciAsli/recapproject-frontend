@@ -1,13 +1,18 @@
 <div class="content ">
     <div class="row ">
       <div class="col-8 mx-auto shadow-lg p-3 mb-5 bg-body rounded mt-4">
-        
-        <form [formGroup]="carAddForm">
+
+        <form *ngIf="car" [formGroup]="carUpdateForm">
+
+          <div>
+            <label for="carId" class="form-label"></label>
+            <input type="hidden" class="form-control" id="carId" formControlName="carId" >
+          </div>
 
           <div class="mb-3">
             <label for="brandId" class="form-label">BrandName</label>
             <select id="brandId" class="form-select" formControlName="brandId">
-              <option >Select a brand</option>
+              <option class="bg-secondary text-white" disabled >{{car.brandName}}</option>
               <option *ngFor="let brand of brands" [ngValue]="brand.brandId">{{brand.brandName}}</option>
             </select>
           </div>
@@ -15,30 +20,30 @@
           <div class="mb-3">
             <label for="colorId" class="form-label">ColorName</label>
             <select id="colorId" class="form-select" formControlName="colorId">
-              <option >Select a color</option>
+              <option class="bg-secondary text-white" disabled >{{car.colorName}}</option>
               <option *ngFor="let color of colors" [ngValue]="color.colorId">{{color.colorName}}</option>
             </select>
           </div>
 
           <div class="mb-3">
             <label for="modelYear" class="form-label">ModelYear</label>
-            <input type="date" class="form-control" id="modelYear" formControlName="modelYear" >
+            <input type="date" class="form-control" id="modelYear" formControlName="modelYear" [ngModel] ="car.modelYear | date:'yyyy-MM-dd'">
           </div>
 
           <div class="mb-3">
             <label for="dailyPrice" class="form-label">DailyPrice</label>
-            <input type="number" class="form-control" id="dailyPrice" formControlName="dailyPrice" >
+            <input type="number" class="form-control" id="dailyPrice" formControlName="dailyPrice" placeholder="{{car.dailyPrice}}" >
           </div>
 
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" formControlName="description" >
+            <input type="text" class="form-control" id="description" formControlName="description" placeholder="{{car.description}}" >
           </div>
 
-          <button type="submit" class="btn btn-danger" (click)="addCar()">Add</button>
+          <button type="submit" class="btn btn-danger" (click)="updateCar()">Update</button>
 
         </form>
-
+        
       </div>
     </div>
   </div>

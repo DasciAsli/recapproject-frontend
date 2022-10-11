@@ -36,8 +36,19 @@ export class CarService {
     return this.httpClient.get<SingleResponseModel<Car>>(newPath);  
   }
 
+  getCarModelByCarId(carId:number):Observable<SingleResponseModel<CarModel>>{
+    let newPath=this.apiUrl+"cars/getcarbycarid?carId=" + carId;
+    return this.httpClient.get<SingleResponseModel<CarModel>>(newPath);
+  }
+
   addCar(carModel:CarModel):Observable<ResponseModel>{
     let newPath=this.apiUrl+"cars/add";
+    return this.httpClient.post<ResponseModel>(newPath,carModel);
+  }
+
+  updateCar(carModel:CarModel):Observable<ResponseModel>
+  {
+    let newPath=this.apiUrl +"cars/update";
     return this.httpClient.post<ResponseModel>(newPath,carModel);
   }
 }
