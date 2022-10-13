@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formbuilder:FormBuilder,
     private toastrService:ToastrService,
-    private authService:AuthService
+    private authService:AuthService,
+    private localStorageService:LocalStorageService
     ) { }
 
   ngOnInit(): void {
@@ -41,7 +43,7 @@ export class RegisterComponent implements OnInit {
         {
           console.log(response);
           this.toastrService.info(response.message);
-          localStorage.setItem("token",response.data.token);
+          this.localStorageService.add("token",response.data.token);
         },responseError=>
         {
           this.toastrService.error(responseError.error);
