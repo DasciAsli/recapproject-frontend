@@ -30,6 +30,7 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     ColorUpdateComponent,
     BrandUpdateComponent,
     CarUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

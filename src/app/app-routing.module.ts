@@ -15,6 +15,7 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
 import { CustomerComponent } from './components/customer/customer.component';
 import { DateComponent } from './components/date/date.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { LoginGuard } from './guards/login.guard';
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path:"cars/cardetail/:carId",component:CardetailComponent},
   {path:"cars/date/:carId",component:DateComponent,canActivate:[LoginGuard]},
   {path:"cars/card/:carId",component:CreditCardComponent,canActivate:[LoginGuard]},
-  {path:"login",component:LoginComponent}
+  {path:"login",component:LoginComponent},
+  {path:"register",component:RegisterComponent}
 ];
 
 @NgModule({

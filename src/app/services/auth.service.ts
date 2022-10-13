@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { LoginModel } from '../models/loginModel';
 import { TokenModel } from '../models/tokenModel';
+import { RegisterModel } from '../models/registerModel';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class AuthService {
     }
   }
 
-  
+  register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>>{
+    let newPath=this.apiUrl + "register";
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath,registerModel);
+  }
+ 
 }

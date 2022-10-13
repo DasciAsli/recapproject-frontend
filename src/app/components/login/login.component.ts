@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formbuilder:FormBuilder,
     private authService:AuthService,
-    private toastrService:ToastrService
+    private toastrService:ToastrService,
+    private router:Router
     ) { }
 
   ngOnInit(): void {
@@ -40,7 +42,13 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token",response.data.token);
         },responseError=>
         {
-          this.toastrService.error(responseError.error);
+          this.toastrService.error(responseError.error); 
+          if(responseError.error=="Kullanıcı bulunamadı")
+          {
+            this.toastrService.info("Kayıt olmak için yönlendiriliyorsunuz");
+            this.router.navigate(["register"]);         
+          }
+               
         })
     }
     else
